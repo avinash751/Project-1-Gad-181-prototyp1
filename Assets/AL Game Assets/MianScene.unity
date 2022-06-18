@@ -712,7 +712,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &1436446525
 MonoBehaviour:
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caff302af0d086d4e9e487404472a458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1500
+  speed: 3000
   DashSpeed: 20
-  jump: 10
+  jump: 15
   grounded: 0

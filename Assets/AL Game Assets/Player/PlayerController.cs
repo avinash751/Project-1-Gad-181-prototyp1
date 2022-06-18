@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.drag = 5; // adds more friction , prevents sliding when moving
+        
     }
 
     void Update()
@@ -30,7 +31,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector3(speed * Time.deltaTime, 0, 0));
             DashOnShift(DashSpeed);
         }
-
         else if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(new Vector3(-speed * Time.deltaTime, 0, 0));
@@ -47,11 +47,11 @@ public class PlayerController : MonoBehaviour
         }    
     }
 
-    void DashOnShift(int dashSpeed) // we can put a float variable in these brackets when we call this function to specify negetic speed or positive speed when dashing
+    void DashOnShift(int dashSpeed) 
     {
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            rb.AddForce(new Vector3(dashSpeed * transform.right.x, 0, 0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(dashSpeed * transform.right.x * Time.deltaTime, 0, 0), ForceMode.Impulse);
         }
     }
 
